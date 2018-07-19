@@ -12,9 +12,7 @@ https://vk.com/dev/first_guide?f=3.%20User%20authorization
 
 Replace access token in **tokens.cgf** with *your* access token.
 
-2. Create additional subdirectory **voicemails**.
-
-3. Run:
+2. Run:
 
 ```
 python db.py
