@@ -1,1 +1,22 @@
 # VKApi_Voicemails
+
+# Info:
+
+Downloads all recent voicemails from VK sent by selected users.
+
+## How to use:
+
+```
+python main.py [uid1] [uid2] ... [uidN],
+```
+where uid1, uid2, ..., uidN are user ids.
+
+Database **voicemails.db3** stores voice messages' names in **'voicemails'** table:
+
+| uid      | list voicemail files' names  |
+| -------- |:----------------------------:|
+| uid1     | vm_name11, ..., vm_name1M    |
+| ...      | ...                          |
+| uidN     | vm_nameN1, ..., vm_nameNK    |
+
+All voice messages files (mp3) are stored in **'voicemails'** folder.
