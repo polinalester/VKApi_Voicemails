@@ -1,9 +1,10 @@
-import sys, urllib2, sqlite3, os
+import sys, urllib2, sqlite3, os, configparser
 uids = sys.argv[1:]
 
-with open('config/tokens.cfg', 'r') as f: # TODO: make cfg prettier
-	access_token = f.read()
-aid = 6637896 # TODO: add to cfg?
+config = configparser.ConfigParser()
+config.read('config/conf.ini')
+access_token = config['User']['AccessToken']
+aid = config['User']['AppID']
 
 from voicemails import get_voicemails
 vmails = get_voicemails(uids, aid, access_token)
