@@ -22,7 +22,7 @@ def get_voicemails(uids, aid, access_token, count=200):
 				more_messages = False
 			else:
 				items = response.json()['response']['items']
-				mid = items[-1]['id']
+				# mid = items[-1]['id']
 				for msg in items:
 					if 'attachments' in msg:
 						for msg_att in msg['attachments']:
