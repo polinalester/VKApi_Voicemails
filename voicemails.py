@@ -9,9 +9,14 @@ def get_voicemails(uids, aid, access_token, count=200):
 			vmails[uid] = []
 		more_messages = True
 		while more_messages:
-			req = 'https://api.vk.com/method/messages.getHistory?user_id=' + str(uid) + '&count='+str(count)+'&offset=' + str(offset) +'&v=5.52&access_token=' + access_token
+			req_params = {'user_id' : str(uid), #add date
+			'count' : str(count), 
+			'offset' : str(offset), 
+			'v' : str(5.52), 
+			'access_token' : access_token}
+			req = 'https://api.vk.com/method/messages.getHistory'
 			time.sleep(0.4)
-			response = requests.get(req)
+			response = requests.get(req, params = req_params)
 
 			if not (len(response.json()['response']['items'])):
 				more_messages = False
@@ -24,5 +29,5 @@ def get_voicemails(uids, aid, access_token, count=200):
 							if ('doc' in msg_att and 'preview' in msg_att['doc'] and 'audio_msg' in msg_att['doc']['preview']):
 								vmails[uid].append(msg_att['doc']['preview']['audio_msg']['link_mp3'])
 				offset = offset + count
-				
+
 	return vmails
