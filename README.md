@@ -10,7 +10,7 @@ Downloads all recent voicemails from VK sent by selected users.
 
 https://vk.com/dev/first_guide?f=3.%20User%20authorization
 
-Replace access token in **tokens.cgf** with *your* access token.
+Replace access token in **config/conf.ini** with your access token.
 
 2. Run:
 
