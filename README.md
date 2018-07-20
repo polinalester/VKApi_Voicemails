@@ -20,7 +20,7 @@ python main.py [uid1] [uid2] ... [uidN]
 ```
 where uid1, uid2, ..., uidN are user ids.
 
-Database **voicemails.db3** stores voice messages' names in **'voicemails'** table:
+Database **voicemails.db3** stores filenames of voice messages in **'voicemails'** table:
 
 | uid      | list of mp3filenames         |
 | -------- |:----------------------------:|
@@ -28,4 +28,4 @@ Database **voicemails.db3** stores voice messages' names in **'voicemails'** tab
 | ...      | ...                          |
 | uidN     | vm_nameN1, ..., vm_nameNK    |
 
-All voice messages files (mp3) are stored in **'voicemails'** folder.
+All voice message files (mp3) are stored in **'voicemails/{UID}'** folder.
